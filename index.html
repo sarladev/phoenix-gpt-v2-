@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phoenix GPT v2</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="logo">🔥</div>
+        <div>
+          <h2>Phoenix GPT</h2>
+          <p>v2 AI Assistant</p>
+        </div>
+      </div>
+
+      <button onclick="newChat()" class="side-btn">+ New Chat</button>
+      <button onclick="saveApiKey()" class="side-btn">🔑 API Key</button>
+      <button onclick="toggleTheme()" class="side-btn">🌗 Theme</button>
+      <button onclick="downloadChat()" class="side-btn">⬇ Download</button>
+      <button onclick="clearChat()" class="side-btn danger">🗑 Clear</button>
+
+      <h3>History</h3>
+      <div id="historyList"></div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+        <div>
+          <h1>Phoenix GPT</h1>
+          <p>Think • Answer • Create</p>
+        </div>
+      </header>
+
+      <section id="chatBox" class="chat-box">
+        <div class="message bot">
+          <div class="avatar">🤖</div>
+          <div class="bubble">
+            <b>Phoenix GPT</b>
+            <p>Hello 👋 I am Phoenix GPT v2. Ask me anything.</p>
+          </div>
+        </div>
+      </section>
+
+      <div id="thinking" class="thinking hidden">
+        🧠 Thinking <span></span><span></span><span></span>
+      </div>
+
+      <div class="quick">
+        <button onclick="quickPrompt('Explain this simply: ')">Explain</button>
+        <button onclick="quickPrompt('Create website code for: ')">Website</button>
+        <button onclick="quickPrompt('Write caption for: ')">Caption</button>
+        <button onclick="quickPrompt('Summarize this: ')">Summarize</button>
+      </div>
+
+      <div class="composer">
+        <input type="file" id="fileInput" />
+        <div class="input-row">
+          <button onclick="startVoice()">🎤</button>
+          <textarea id="userInput" placeholder="Message Phoenix GPT..."></textarea>
+          <button onclick="sendMessage()" class="send">➤</button>
+        </div>
+        <div class="actions">
+          <button onclick="regenerate()">🔁 Regenerate</button>
+          <button onclick="copyLastAnswer()">📋 Copy Last</button>
+          <button onclick="speakLastAnswer()">🔊 Speak</button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/storage.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/voice.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+</body>
+        </html>
