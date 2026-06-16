@@ -1,0 +1,36 @@
+@media(max-width: 800px) {
+  body {
+    overflow: auto;
+  }
+
+  .app {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .sidebar {
+    position: fixed;
+    left: -290px;
+    top: 0;
+    height: 100vh;
+    z-index: 10;
+    transition: 0.3s;
+  }
+
+  .sidebar.active {
+    left: 0;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .bubble {
+    max-width: 82vw;
+  }
+
+  .quick,
+  .actions {
+    overflow-x: auto;
+  }
+}
